@@ -2,7 +2,7 @@ import React from 'react'
 
 const ContactInfoData = ( {data, imgSrc }) => {
     return (
-        <article className='flex flex-row items-center  border-1 border-blue border-t h-12 w-full pl-3'>
+        <article className='flex flex-row items-center border-1 border-blue border-t h-12 w-full pl-3'>
             <img 
                 src= {imgSrc} 
                 alt="Address" 

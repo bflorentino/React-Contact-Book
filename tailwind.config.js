@@ -13,7 +13,7 @@ module.exports = {
       'blue': '#4D67D5',
       'hoverblue': 'rgba(0,0,0,0.2)',
       'input-color': '#F1F1F1',
-      'green': '#56EA85',
+      'green': '#53CF28',
       'white': '#ffffff',
       'black': '#000000',
       'gray': '#999999',
@@ -27,7 +27,8 @@ module.exports = {
       'card-7': '#37B9CB',
       'card-8': '#EFF91D',
       'card-9': '#A6E4A8',
-      'card-10': '#549E99'
+      'card-10': '#549E99',
+      'transparent': 'transparent'
     },
     fontFamily: {
       'mukta': ['"Mukta"', 'sans-serif'],
@@ -46,7 +47,7 @@ module.exports = {
         '1/2': '300px',
       },
       width : {
-        'card': '420px'
+        'card': '410px'
       },
 
     }

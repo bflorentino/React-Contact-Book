@@ -4,6 +4,11 @@ import { contactsContext } from '../../Contact/ContactContext';
 import { Types } from '../../Types/types';
 import { useForm } from '../Hooks/useForm'
 import ContactForm from '../Small Components/ContactForm';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import { validateForm } from '../../Validations/validateForm';
+
+toast.configure();
 
 const CreateContactPage = () => {
 
@@ -20,14 +25,30 @@ const CreateContactPage = () => {
 
     const handleAddContact = ( e ) =>  {
         e.preventDefault();
-        dispatch({
-            type: Types.Add,
-            payload: {
-                ...formValues,
-                name: formValues.name[0].toUpperCase()+ formValues.name.slice(1),
-            } 
-        })
-        history('/', {replace:true} )
+
+        const response = validateForm(formValues)
+
+        if(response === true){  
+            dispatch({
+                type: Types.Add,
+                payload: {
+                    ...formValues,
+                    name: formValues.name[0].toUpperCase()+ formValues.name.slice(1),
+                    phone: formValues.phone.replace(/-/g, "")
+                } 
+            })
+
+            history('/', {replace:true} )
+
+            toast.success("Contact was created", {
+                position: toast.POSITION.TOP_LEFT,
+                autoClose:4000})
+        }
+        else{
+            toast.error(response, {
+                position: toast.POSITION.TOP_LEFT,
+                autoClose:4000});
+        }
     }
     
     return (

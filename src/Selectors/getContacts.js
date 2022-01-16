@@ -10,5 +10,7 @@ export const getContactsByPhoneNumber = ( phoneNumber ) => {
 export const getContactsByName = ( name ) => {
 
     const contacts = JSON.parse(window.localStorage.getItem("contacts"));
-    return contacts.filter(contact => contact.name.toLowerCase().includes(name.toLowerCase())) || []
+    return contacts !== null ? contacts.filter(contact => contact.name.toLowerCase().includes(name.toLowerCase()))
+                             :   []
+
 }

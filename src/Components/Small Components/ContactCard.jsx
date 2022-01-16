@@ -18,13 +18,13 @@ const ContactCard = ( { contact, color, newLetter } ) => {
             {
                 newLetter && (<ContactFirstLetter letter = {name[0]} />)  
             }
-            <div className={`${color} rounded-full py-2 px-4 text-white text-center font-mukta text-xl font-medium w-12`} onClick={ handleViewContact }>
+            <div className={`${color} rounded-full py-2 px-4 text-white text-center font-mukta text-xl font-medium w-14 h-14 leading-normal`} onClick={ handleViewContact }>
                 {name[0]}
             </div>
-            <div className='flex flex-col ml-2 w-card mt-2 'onClick={ handleViewContact } >
+            <div className='flex flex-col ml-2 w-card mt-1 'onClick={ handleViewContact } >
                 <div className='ml-8'>
                     <p className='text-xl font-mukta'>{name}</p>
-                    <p className='text-sm text-gray font-mukta'>{phone}</p>
+                    <p className='text-lg text-gray font-mukta'>{phone}</p>
                 </div>
             </div>
 

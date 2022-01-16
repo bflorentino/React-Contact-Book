@@ -22,30 +22,33 @@ const ContactForm = ( {
               onChange = { handleInputChanges }
               value = { name }
               required
-              className='outline-none bg-input-color w-full pl-2 py-3 mt-2 font-mukta text-xl'
+              className='outline-none w-full pl-2 py-3 mt-2 font-mukta text-xl bg-transparent 
+              border-b border-gray'
           />
       </div>
       <div>
           <input 
-              type="number"
+              type="text"
               autoComplete='off'
-              placeholder='Phone Number'
+              placeholder='Phone'
               name="phone"
               onChange = { handleInputChanges }
               value = { phone }
               required
-              className='outline-none bg-input-color w-full pl-2 py-3 mt-2 font-mukta text-xl'
+              className='outline-none w-full pl-2 py-3 mt-2 font-mukta text-xl bg-transparent 
+              border-b border-gray'
           />
       </div>
       <div>
           <input 
-              type="email"
+              type="text"
               autoComplete='off'
               placeholder='Email'
               value = { email }
               onChange = { handleInputChanges }
               name = "email"
-              className='outline-none bg-input-color w-full pl-2 py-3 mt-2 font-mukta text-xl'
+              className='outline-none w-full pl-2 py-3 mt-2 font-mukta text-xl bg-transparent 
+              border-b border-gray'
           />
       </div>
       <div>
@@ -56,7 +59,8 @@ const ContactForm = ( {
               name = "address" 
               onChange = { handleInputChanges }
               value = { address }
-              className='outline-none bg-input-color w-full pl-2 py-3 mt-2 font-mukta text-xl'
+              className='outline-none w-full pl-2 py-3 mt-2 font-mukta text-xl bg-transparent 
+              border-b border-gray'
           />
       </div>
       <div>
@@ -64,7 +68,8 @@ const ContactForm = ( {
               name='relationship'
               onChange = { handleInputChanges }
               value= { relationship }
-              className='bg-input-color w-full pl-2 py-3 mt-2 font-mukta  text-xl'
+              className='w-full pl-2 py-3 mt-2 font-mukta text-xl bg-transparent 
+              border-b border-gray'
             >
               <option value="">Relationship</option>
               <option value="Mother">Mother</option>
@@ -82,7 +87,7 @@ const ContactForm = ( {
       </div>
       <button 
           type='submit'
-          className='bg-green rounded h-10 text-white text-xl mt-2 font-mukta'
+          className='bg-green rounded h-10 text-white text-xl mt-8 font-mukta'
           onClick={ handleSubmit }
       >
           Save Changes

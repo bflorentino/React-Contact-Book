@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import { contactsContext } from '../Contact/ContactContext'
-import { getContactsByName } from '../Selectors/getContacts'
+import { contactsContext } from '../../Contact/ContactContext'
+import { getContactsByName } from '../../Selectors/getContacts'
 import { useForm } from '../Hooks/useForm'
 import ContactCard from '../Small Components/ContactCard'
 
@@ -29,7 +29,7 @@ const ContactListPage = () => {
         <>
             <h1 className='text-center text font-bold text-4xl font-mukta mt-9'>My Contacts</h1>
             <p className='text-center font-mukta'>{contacts.length} contacts</p>
-            <div className='flex flex-col justify-center w-full items-center mt-7'>
+            <div className='flex flex-col justify-center w-full items-center mt-7 mb-12'>
                 <form>
                     <input 
                             type="text"
@@ -38,7 +38,7 @@ const ContactListPage = () => {
                             value = {formValues.search}
                             onChange={ handleInputChanges }
                             placeholder=' Search a contact'
-                            className='w-128 outline-none py-2 pl-2 placeholder:font-Fa placeholder:font-bold'
+                            className='w-128 outline-none py-2 pl-2 placeholder:font-Fa placeholder:font-bold bg-transparent border-1 border-gray border'
                         />
                 </form>
                 {

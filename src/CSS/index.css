@@ -13,7 +13,7 @@ body{
  #root{
     width: 100%;
     height: 100%;
-    background-color: #E4E7E7;
+    background-color: #F7F7F7;
     display: flex;
     flex-direction: column;
     overflow: scroll;
