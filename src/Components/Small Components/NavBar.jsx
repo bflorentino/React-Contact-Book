@@ -1,16 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const NavBar = () => {
 
     const location = useLocation();
     const history = useNavigate();
+    const [ theme, setTheme ] = useState(window.localStorage.theme === "dark" 
+                                        ?"Ligth"
+                                        :"Dark")
     
     const goBack = ( e ) => history(-1);
 
     const setAppTheme = (e) =>{
+
+        window.localStorage.theme === "dark"
+        ? localStorage.removeItem("theme")
+        :  localStorage.theme = "dark"
+
         document.getElementById("root").classList.toggle("dark-root")  
         document.documentElement.classList.toggle('dark')
+
+        setTheme(window.localStorage.theme === "dark" ?"Ligth" :"Dark")
     } 
 
     return (
@@ -19,15 +29,17 @@ const NavBar = () => {
                     <div>
                         {
                             location.pathname === '/'
-                            ? <Link to = '/' >Phone</Link>
+                            ? <Link to = '/' >
+                                <img 
+                                    src="./assets/Icons/phone-white.png" 
+                                    alt="phone" 
+                                    className='w-8 h-8 ml-4' 
+                                />
+                              </Link>
                             : <button 
                                 className='goBack text-white text-lg sm:text-2xl hover:bg-hoverblue py-3 px-2'
                                 onClick={ goBack }
                               > 
-                                {/* <img 
-                                    src='./assets/Icons/Back.png' 
-                                    alt="Go Back" 
-                                />  */}
                                 Go Back
                               </button>
                         }
@@ -39,11 +51,6 @@ const NavBar = () => {
                     <>
                     <div className='pl-3 pr-3 py-3 hover:bg-hoverblue'>
                         <Link to = '/CreateContact' className='text-white text-lg sm:text-2xl'>
-                            {/* <img 
-                                src='./assets/Icons/Add.png' 
-                                alt="Add Contact"
-                                className='w-8'
-                            /> */}
                             New Contact
                         </Link>
                     </div>
@@ -53,12 +60,7 @@ const NavBar = () => {
                         <button 
                             className='text-white text-lg sm:text-2xl'
                             onClick={ setAppTheme }>
-                            {/* <img 
-                                src='./assets/Icons/settings.png' 
-                                alt="Settings" 
-                                className='w-8'
-                            /> */}
-                            Dark
+                            {theme}
                         </button>
                     </div>
                 </div>

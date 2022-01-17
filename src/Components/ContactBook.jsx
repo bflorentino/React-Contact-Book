@@ -11,10 +11,19 @@ const ContactBook = () => {
 
     const [ contacts, dispatch ] = useReducer(ContactsReducer, [], init)
 
-    useEffect(() => {
-        
+    useEffect(() => {    
         window.localStorage.setItem('contacts', JSON.stringify(contacts))
         }, [ contacts ])
+
+    useEffect(() => {
+        if(window.localStorage.theme === 'dark'){
+            document.getElementById("root").classList.add("dark-root")  
+            document.documentElement.classList.add('dark')
+        }
+        else {
+            document.documentElement.classList.remove('dark')
+          }
+    }, [])
 
     return (
         <contactsContext.Provider
