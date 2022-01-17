@@ -8,13 +8,17 @@ body{
     width: 100vw;
     height: 100vh; 
     font-family: "Mukta";
+    background-color: #F7F7F7;
 }
 
- #root{
+#root{
     width: 100%;
     height: 100%;
-    background-color: #F7F7F7;
     display: flex;
     flex-direction: column;
     overflow: scroll;
+}
+
+.dark-root{
+    background-color: #2D2D2D;
 }

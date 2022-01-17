@@ -1,13 +1,19 @@
 module.exports = {
+  
+  darkMode: 'class',
+
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     screens: {
       sm: '480px',
+      ts: '635px',
+      as: '576px',
       md: '768px',
       lg: '976px',
       xl: '1440px',
+      ms : '350px',
     },
     colors: {
       'blue': '#4D67D5',
@@ -28,7 +34,8 @@ module.exports = {
       'card-8': '#EFF91D',
       'card-9': '#A6E4A8',
       'card-10': '#549E99',
-      'transparent': 'transparent'
+      'transparent': 'transparent',
+      'dark-nav': '#393939',
     },
     fontFamily: {
       'mukta': ['"Mukta"', 'sans-serif'],
@@ -47,7 +54,7 @@ module.exports = {
         '1/2': '300px',
       },
       width : {
-        'card': '410px'
+        'card': '360px'
       },
 
     }

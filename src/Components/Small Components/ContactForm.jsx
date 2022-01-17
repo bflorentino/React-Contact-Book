@@ -11,8 +11,8 @@ const ContactForm = ( {
     const { name, phone, email, address, relationship } = formValues;
 
     return (
-        <form className='flex flex-col mt-20 w-3/5'>
-        <h1 className='text-center text font-bold text-4xl font-mukta'> { formTitle } </h1>
+        <form className='flex flex-col mt-20 w-4/5 sm:w-3/5'>
+        <h1 className='text-center text font-bold text-3xl sm:text-4xl font-mukta dark:text-white dark:font-normal mt-12'> { formTitle } </h1>
       <div>
           <input 
               type="text"
@@ -23,7 +23,7 @@ const ContactForm = ( {
               value = { name }
               required
               className='outline-none w-full pl-2 py-3 mt-2 font-mukta text-xl bg-transparent 
-              border-b border-gray'
+              border-b border-gray dark:text-white'
           />
       </div>
       <div>
@@ -36,7 +36,7 @@ const ContactForm = ( {
               value = { phone }
               required
               className='outline-none w-full pl-2 py-3 mt-2 font-mukta text-xl bg-transparent 
-              border-b border-gray'
+              border-b border-gray dark:text-white'
           />
       </div>
       <div>
@@ -48,7 +48,7 @@ const ContactForm = ( {
               onChange = { handleInputChanges }
               name = "email"
               className='outline-none w-full pl-2 py-3 mt-2 font-mukta text-xl bg-transparent 
-              border-b border-gray'
+              border-b border-gray dark:text-white'
           />
       </div>
       <div>
@@ -60,7 +60,7 @@ const ContactForm = ( {
               onChange = { handleInputChanges }
               value = { address }
               className='outline-none w-full pl-2 py-3 mt-2 font-mukta text-xl bg-transparent 
-              border-b border-gray'
+              border-b border-gray dark:text-white'
           />
       </div>
       <div>
@@ -69,20 +69,20 @@ const ContactForm = ( {
               onChange = { handleInputChanges }
               value= { relationship }
               className='w-full pl-2 py-3 mt-2 font-mukta text-xl bg-transparent 
-              border-b border-gray'
+              border-b border-gray dark:text-white'
             >
               <option value="">Relationship</option>
-              <option value="Mother">Mother</option>
-              <option value="Father">Father</option>
-              <option value="Brother">Brother</option>
-              <option value="Sister">Sister</option>
-              <option value="Spouse">Spouse</option>
-              <option value="Child">Child</option>
-              <option value="Friend">Friend</option>
-              <option value="Relative">Relative</option>
-              <option value="Partner">Partner</option>
-              <option value="Manager">Manager</option>
-              <option value="Assistant">Assistant</option>
+              <option value="Mother" className='dark:text-black'>Mother</option>
+              <option value="Father" className='dark:text-black' >Father</option>
+              <option value="Brother" className='dark:text-black'>Brother</option>
+              <option value="Sister" className='dark:text-black'>Sister</option>
+              <option value="Spouse" className='dark:text-black'>Spouse</option>
+              <option value="Child" className='dark:text-black'>Child</option>
+              <option value="Friend" className='dark:text-black'>Friend</option>
+              <option value="Relative" className='dark:text-black'>Relative</option>
+              <option value="Partner" className='dark:text-black'>Partner</option>
+              <option value="Manager" className='dark:text-black'>Manager</option>
+              <option value="Assistant" className='dark:text-black'>Assistant</option>
           </select>
       </div>
       <button 

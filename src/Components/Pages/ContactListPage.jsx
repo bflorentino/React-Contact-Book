@@ -27,20 +27,23 @@ const ContactListPage = () => {
     
     return (
         <>
-            <h1 className='text-center text font-bold text-4xl font-mukta mt-9'>My Contacts</h1>
-            <p className='text-center font-mukta'>{contacts.length} contacts</p>
+            <h1 className='text-center dark:text-white dark:font-normal text font-bold text-3xl sm:text-4xl font-mukta mt-20'>My Contacts</h1>
+            <p className='dark:text-white text-center font-mukta'>{contacts.length} contacts</p>
             <div className='flex flex-col justify-center w-full items-center mt-7 mb-12'>
-                <form>
+
+                <div className='w-4/5 as:w-128 '>
+                <form onSubmit={(e)=> e.preventDefault()}>
                     <input 
                             type="text"
                             autoComplete='off'
                             name = 'search'
                             value = {formValues.search}
                             onChange={ handleInputChanges }
-                            placeholder=' Search a contact'
-                            className='w-128 outline-none py-2 pl-2 placeholder:font-Fa placeholder:font-bold bg-transparent border-1 border-gray border'
+                            placeholder=' Search...'
+                            className='w-full outline-none py-1 pl-1 sm:py-2 ms:pl-2 placeholder:font-Fa placeholder:font-bold bg-transparent border-1 border-gray border dark:text-white dark:bg-hoverblue'
                         />
                 </form>
+                </div>
                 {
                     search === ""
                     ? (contacts.map((contact, index) =>{
