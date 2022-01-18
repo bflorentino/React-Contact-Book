@@ -36,6 +36,7 @@ module.exports = {
       'card-10': '#549E99',
       'transparent': 'transparent',
       'dark-nav': '#393939',
+      'color-border': '#30363D'
     },
     fontFamily: {
       'mukta': ['"Mukta"', 'sans-serif'],

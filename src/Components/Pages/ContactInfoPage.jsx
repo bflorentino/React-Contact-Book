@@ -1,28 +1,44 @@
 import React, { useContext } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { contactsContext } from '../../Contact/ContactContext';
-import { getContactsByPhoneNumber } from '../../Selectors/getContacts';
+import { getContactById } from '../../Selectors/getContacts';
 import { Types } from '../../Types/types';
 import ContactInfoData from '../Small Components/ContactInfoData';
+import { toast } from 'react-toastify';
+import swal from 'sweetalert';
+
+toast.configure();
 
 const ContactInfoPage = () => {
 
-    const { contactPhone } = useParams();
+    const { contactId } = useParams();
     const history = useNavigate();
-    const contact = getContactsByPhoneNumber(contactPhone);
+    const contact = getContactById(contactId);
     const { dispatch } = useContext( contactsContext )
     
-    const handleEdit = () => history(`/EditContact/${ contactPhone }`)
+    const handleEdit = () => history(`/EditContact/${ contactId }`)
 
     const handleDelete =  (e) => {
-
-        dispatch({
-            type: Types.Delete,
-            payload : {
-                ...contact
-            }
-        })
-        history('/', {replace : true})
+        swal({
+            title: "Delete Contact",
+            text: "Are you sure you want to remove this contact?",
+            icon: "warning",
+            buttons: [ "Cancel", "Accept"]
+        }).then(response => {
+            if(response){
+                    dispatch({
+                        type: Types.Delete,
+                        payload : {
+                            ...contact
+                        }
+                    })
+                    history('/', {replace : true})
+        
+                    toast.success("Contact was deleted", {
+                        position: toast.POSITION.TOP_LEFT,
+                        autoClose:2500})
+                }
+        }) 
     }
 
     return (
@@ -33,15 +49,11 @@ const ContactInfoPage = () => {
                     alt="user"
                     className = 'w-28 h-28 sm:w-40 sm:h-40 mt-5' 
                 />
-                <p className = 'flex flex-row text-3xl font-mukta dark:text-white'> 
+                <p className = 'text-center flex flex-row text-3xl font-mukta dark:text-white'> 
                     {contact.name}
-                    <img 
-                        src="../assets/Icons/favoriteYellow.png" 
-                        alt="favorite" 
-                        className='w-8 h-8 ml-4'/> 
                 </p>
-                <p className = 'text-sm dark:text-white'> 
-                    {contactPhone}   
+                <p className = 'text-lg dark:text-white'> 
+                    {contact.phone}   
                 </p>
                 <a href= {`tel:${contact.phone}`}> 
                     <img 
@@ -52,7 +64,7 @@ const ContactInfoPage = () => {
                 </a> 
               
             </div>
-            <div className = 'w-full flex-col'>
+            <div className = 'w-full flex-col mt-5'>
 
                 <ContactInfoData 
                     data= {contact.phone} 
@@ -82,7 +94,8 @@ const ContactInfoPage = () => {
                       imgSrc={'../assets/Icons/relationship.png'}
                   />
                 }
-                <div className='flex flex-row justify-center mt-12 mb-5'>
+                </div>
+                <div className='flex flex-row justify-center mt-12 mb-5 flex-1'>
                     <div className='flex flex-col items-center px-8 py-2 cursor-pointer hover:bg-hoverblue' onClick={ handleEdit }>
                         <img  
                             src="../assets/Icons/Editsection.png" 
@@ -102,7 +115,7 @@ const ContactInfoPage = () => {
             </div>
         </div>
         
-            </div>
+            
     )
 }
 

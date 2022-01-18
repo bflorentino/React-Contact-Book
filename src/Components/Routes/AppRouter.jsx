@@ -8,8 +8,6 @@ import ContactListPage from '../Pages/ContactListPage';
 import CreateContactPage from '../Pages/CreateContactPage';
 import EditContactPage from '../Pages/EditContactPage';
 import Page404 from '../Pages/Page404';
-// import SearchPage from '../Pages/SearchPage';
-import SettingsPage from '../Pages/SettingsPage';
 import NavBar from '../Small Components/NavBar';
 
 const AppRouter = () => {
@@ -25,7 +23,7 @@ const AppRouter = () => {
                     />
                     <Route
                         exact
-                        path='/Contact-Info/:contactPhone'
+                        path='/Contact-Info/:contactId'
                         element = { <ContactInfoPage /> }
                     />
                     <Route
@@ -35,18 +33,8 @@ const AppRouter = () => {
                     />
                     <Route
                         exact
-                        path='/EditContact/:contactPhone'
+                        path='/EditContact/:contactId'
                         element = { <EditContactPage /> }
-                    />
-                     {/* <Route
-                        exact
-                        path='/Search'
-                        element = { <SearchPage /> }
-                    /> */}
-                     <Route
-                        exact
-                        path='/Settings'
-                        element = { <SettingsPage /> }
                     />
                     <Route
                         exact

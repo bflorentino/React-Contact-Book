@@ -1,6 +1,8 @@
 import { Types } from "../Types/types"
 
 export const ContactsReducer = ( state, action ) => {
+
+    // Contact list is managed by this reducer. Available actions are Add, Edit and Delete.
     
     switch ( action.type ) {
         
@@ -12,14 +14,14 @@ export const ContactsReducer = ( state, action ) => {
             })
         
         case Types.Edit:
-            return state.map(contact => (contact.phone === action.payload.phone)
+            return state.map(contact => (contact.id === action.payload.id)
                                         ? {
                                             ...action.payload
                                         }
                                         : contact )
         
         case Types.Delete:
-            return state.filter(contact => contact.phone !== action.payload.phone)
+            return state.filter(contact => contact.id !== action.payload.id)
         
             default:
             return state

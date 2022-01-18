@@ -48,12 +48,13 @@ const ContactListPage = () => {
                     search === ""
                     ? (contacts.map((contact, index) =>{
 
-                         (currentColor === bgColors.length - 1 )
-                         ? currentColor = 0
-                         : currentColor++;
-                         
-                         if(index === 0)
-                             isAnewLetter = true
+                        
+                        (currentColor === bgColors.length - 1 )
+                        ? currentColor = 0
+                        : currentColor++;
+                        
+                        if(index === 0)
+                        isAnewLetter = true
                          else if(index > 0 && (contact.name[0] !== contacts[index - 1].name[0]))
                              isAnewLetter = true
                           else

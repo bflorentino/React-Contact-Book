@@ -40,14 +40,14 @@ const NavBar = () => {
                                 className='goBack text-white text-lg sm:text-2xl hover:bg-hoverblue py-3 px-2'
                                 onClick={ goBack }
                               > 
-                                Go Back
+                                Back
                               </button>
                         }
                     </div>
                     
                 <div className='flex flex-rows ml-auto justify-between'>
                 {
-                    location.pathname !== '/CreateContact' &&
+                    (location.pathname === '/') &&
                     <>
                     <div className='pl-3 pr-3 py-3 hover:bg-hoverblue'>
                         <Link to = '/CreateContact' className='text-white text-lg sm:text-2xl'>
