@@ -5,7 +5,7 @@ export const validateForm = ( {name, phone, email} ) => {
     // Name and phone are required inputs, so it's necessary to check if they're not empty.
     // Email is not required, but in case the user enters an email it's necessary to check if it's a valid email.
 
-    const phoneRegEx = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+    const phoneRegEx = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im;
     const emailRegEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if(name === "") return "Name is required";
