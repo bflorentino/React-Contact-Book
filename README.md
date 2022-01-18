@@ -9,8 +9,8 @@ Esta es una aplicación que permite manejar una agenda telefónica. La misma per
 
 La aplicación fue creada utilizando las siguientes tecnologías:
 
-- React JS
-- Tailwind 
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
 
 ## Características
